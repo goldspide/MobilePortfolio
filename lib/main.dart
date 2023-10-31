@@ -1,11 +1,15 @@
+import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
 import 'package:adaptive_theme/adaptive_theme.dart';
 import 'package:folio/Drawer1/Home.dart';
 import 'package:folio/Navigation/Menu_vertical_gauche_3D.dart';
 import 'Home/home.dart';
 import 'acceuil.dart';
+import 'firebase_option.dart';
 
-void main() {
+Future<void> main() async{
+  WidgetsFlutterBinding.ensureInitialized();
+  await Firebase.initializeApp();
   runApp(const MyApp());
 }
 
@@ -32,6 +36,7 @@ class MyApp extends StatelessWidget {
               title: 'Invest',
               theme: theme,
               darkTheme: darkTheme,
+              debugShowCheckedModeBanner: false,
               home: const MyHomePage(title: 'Cash'),
             )
           );
