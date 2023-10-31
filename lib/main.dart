@@ -3,6 +3,8 @@ import 'package:flutter/material.dart';
 import 'package:adaptive_theme/adaptive_theme.dart';
 import 'package:folio/Drawer1/Home.dart';
 import 'package:folio/Navigation/Menu_vertical_gauche_3D.dart';
+import 'package:folio/test/unique_page_view.dart';
+import 'package:shared_preferences/shared_preferences.dart';
 import 'Home/home.dart';
 import 'acceuil.dart';
 import 'firebase_option.dart';
@@ -59,7 +61,7 @@ class _MyHomePageState extends State<MyHomePage> {
     return const MaterialApp(
       debugShowCheckedModeBanner: false,
       title: "Afri~Cash",
-      home:acceuil(),
+      home:UniquePageView(),
       // home: Home(),
       // home: MenuDashboardPage(),
     );
@@ -150,15 +152,15 @@ class _MyHomePageState extends State<MyHomePage> {
 //       home: SimpleHiddenDrawer(
 //         menu: Menu(),
 //         screenSelectedBuilder: (position,controller) {
-          
+
 //           Widget screenCurrent;
-          
+
 //           switch(position){
 //             case 0 : screenCurrent = page1(); break;
 //             case 1 : screenCurrent = page2(); break;
 //             // case 2 : screenCurrent = Screen3(); break;
 //           }
-          
+
 //           return Scaffold(
 //             backgroundColor: backgroundColorContent,
 //             appBar: AppBar(
@@ -170,7 +172,7 @@ class _MyHomePageState extends State<MyHomePage> {
 //             ),
 //             body: screenCurrent,
 //           );
-          
+
 //         },
 //       ),
 //     );

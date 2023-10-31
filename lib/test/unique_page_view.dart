@@ -1,4 +1,8 @@
 import 'package:flutter/material.dart';
+import 'package:folio/acceuil.dart';
+import 'package:folio/login.dart';
+import 'package:folio/main.dart';
+import 'package:folio/test/FirstView.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 
 class UniquePageView extends StatefulWidget {
@@ -9,7 +13,7 @@ class UniquePageView extends StatefulWidget {
 }
 
 class _UniquePageViewState extends State<UniquePageView> {
-  bool _isFirstTime;
+  bool _isFirstTime = true;
 
   @override
   void initState(){
@@ -24,12 +28,11 @@ class _UniquePageViewState extends State<UniquePageView> {
       await prefs.setBool("isFirstTime", false);
     }
     setState(() {
-
     });
   }
 
   @override
   Widget build(BuildContext context) {
-    return _isFirstTime? 
+    return _isFirstTime? const FirstView(): const acceuil();
   }
 }

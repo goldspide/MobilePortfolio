@@ -66,7 +66,7 @@ int pageIndex = 0;
                     //bouton next
                     child: ElevatedButton(
                       onPressed: (){ 
-                       Navigator.push(context, MaterialPageRoute(builder: (context) => const authentification(), //ouverture de la next page
+                       Navigator.pushReplacement(context, MaterialPageRoute(builder: (context) => const authentification(), //ouverture de la next page
                         ),);
                       },
                       style: ElevatedButton.styleFrom(
